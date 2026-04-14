@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import cifrados.*; // Importamos nuestros cifrados
+import cifrados.*;
 
 public class Main extends JFrame {
     private JTextArea txtEntrada, txtSalida;
@@ -13,26 +13,26 @@ public class Main extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Panel Superior: Opciones
+        // Opciones
         JPanel panelNorte = new JPanel();
         comboMetodos = new JComboBox<>(new String[]{"Cesar", "Atbash", "Vigenere", "Railfence", "Playfair"});
         txtClave = new JTextField(10);
-        panelNorte.add(new JLabel("Método:"));
+        panelNorte.add(new JLabel("Cifrado:"));
         panelNorte.add(comboMetodos);
         panelNorte.add(new JLabel("Clave:"));
         panelNorte.add(txtClave);
         add(panelNorte, BorderLayout.NORTH);
 
-        // Panel Central: Textos
+        // Textos
         JPanel panelCentro = new JPanel(new GridLayout(1, 2));
-        txtEntrada = new JTextArea("Texto a cifrar...");
-        txtSalida = new JTextArea("Texto cifrado...");
+        txtEntrada = new JTextArea("");
+        txtSalida = new JTextArea("");
         txtSalida.setEditable(false);
         panelCentro.add(new JScrollPane(txtEntrada));
         panelCentro.add(new JScrollPane(txtSalida));
         add(panelCentro, BorderLayout.CENTER);
 
-        // Panel Inferior: Botones
+        // Botones
         JPanel panelSur = new JPanel();
         JButton btnCifrar = new JButton("Cifrar");
         JButton btnDescifrar = new JButton("Descifrar");
@@ -40,7 +40,6 @@ public class Main extends JFrame {
         panelSur.add(btnDescifrar);
         add(panelSur, BorderLayout.SOUTH);
 
-        // Eventos
         btnCifrar.addActionListener(e -> procesar(true));
         btnDescifrar.addActionListener(e -> procesar(false));
     }

@@ -15,5 +15,4 @@ public class RailFence {
         for (char[] r : matrix) for (char c : r) if (c != 0) res.append(c);
         return res.toString();
     }
-    // El descifrado de RailFence es más complejo, omitido por brevedad o simplificado.
 }
