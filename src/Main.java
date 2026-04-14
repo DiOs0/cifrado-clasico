@@ -8,7 +8,7 @@ public class Main extends JFrame {
     private JTextField txtClave;
 
     public Main() {
-        setTitle("Criptografía Clásica - Computación");
+        setTitle("Criptografía Clasica - Computación");
         setSize(800, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
